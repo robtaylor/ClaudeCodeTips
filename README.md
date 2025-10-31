@@ -1,27 +1,3 @@
----
-banner:
-date_created: Friday, October 31st 2025, 12:00:00 am
-date_updated: Friday, October 31st 2025, 8:39:23 am
-title: README
-author: hacket
-categories:
-  - AI
-category: ClaudeCode
-tags: [AI, ClaudeCode, Learning-Path]
-toc: true
-description: Claude Code 完整学习路径导航
-dg-publish: true
-dg-enable-search: true
-dg-show-local-graph: true
-dg-show-toc: true
-dg-show-file-tree: true
-image-auto-upload: true
-feed: show
-format: list
-aliases: [Claude Code 学习路径导航]
-linter-yaml-title-alias: Claude Code 学习路径导航
----
-
 # Claude Code 学习路径导航
 
 ![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/202510310825827.png)
@@ -34,7 +10,7 @@ linter-yaml-title-alias: Claude Code 学习路径导航
 
 本知识库按照 Claude Code 官方学习路径组织,从基础到高级,循序渐进地帮助你掌握 Claude Code 的各项功能。
 
-## 📚 五大学习级别
+## 📚 六大学习级别
 
 ### 🟨 [Level 1: Core CLI - 核心 CLI](Level-1-Core-CLI/README.md)
 
@@ -97,11 +73,9 @@ linter-yaml-title-alias: Claude Code 学习路径导航
 
 ---
 
-## 📖 其他学习资源
+### 🟦 [Level 6: Best Practices - 最佳实践](Level-6-Best-Practices/README.md)
 
-### [Level 6: Best Practices - 最佳实践](Level-6-Best-Practices/README.md)
-
-包含最佳实践、开源项目和工作流实践等扩展材料。
+最佳实践、开源项目汇总和个人使用经验等扩展材料。
 
 **主要资源:**
 - [官方最佳实践](Level-6-Best-Practices/01-Claude%20Code%20官方最佳实践.md)
@@ -145,7 +119,50 @@ linter-yaml-title-alias: Claude Code 学习路径导航
 
 - 📚 [Claude Code 官方文档](https://docs.anthropic.com/zh-CN/docs/claude-code/overview)
 - 🐙 [Claude Code GitHub](https://github.com/anthropics/claude-code)
+- 🚀 [Claude Skills 官方仓库](https://github.com/anthropics/skills)
 - 🎓 [Anthropic Courses](https://anthropic.skilljar.com/)
+
+---
+
+## 🛠️ 项目配置
+
+本项目已配置 [`CLAUDE.md`](CLAUDE.md) 文件，为 Claude Code 提供项目上下文和开发指导。
+
+### 开发规范
+- 使用中文内容，专业术语保留英文
+- 文档采用 Obsidian 格式，支持 wikilink 内部链接
+- 每个级别文件夹建议不超过 8 个文件
+- 遵循渐进式学习路径设计
+
+### 🚀 内置 Skills
+
+项目还包含了丰富的 Claude Code Skills，扩展了 Claude 的专业能力。这些技能来自 [Claude 官方 Skills 仓库](https://github.com/anthropics/skills)：
+
+#### 🎨 创意与设计
+- **algorithmic-art** - 算法艺术生成，使用 p5.js 创建参数化艺术作品
+- **artifacts-builder** - 复杂 HTML artifacts 构建工具，支持 React + Tailwind CSS
+- **canvas-design** - 专业视觉设计工具，支持 PNG/PDF 输出
+- **brand-guidelines** - Anthropic 官方品牌风格应用
+- **theme-factory** - 主题样式工具包
+
+#### 📄 文档处理
+- **docx** - Word 文档创建、编辑和分析，支持修订跟踪
+- **pdf** / **pdf-processing-pro** - PDF 处理工具，支持表单、OCR、批量操作
+- **xlsx** - Excel 电子表格处理
+- **pptx** - PowerPoint 演示文稿处理
+
+#### 🛠️ 开发工具
+- **skill-creator** - 新技能开发指南
+- **mcp-builder** - MCP 服务器构建工具
+- **webapp-testing** - 本地 Web 应用测试工具包
+- **template-skill** - 技能模板
+
+#### 📊 企业工具
+- **internal-comms** - 内部沟通文档模板
+- **slack-gif-creator** - Slack 动画 GIF 创建工具
+- **video-downloader** - 视频下载工具
+
+使用方法：输入 `/skill` 命令或直接调用相关技能名称即可使用。
 
 ---
 
