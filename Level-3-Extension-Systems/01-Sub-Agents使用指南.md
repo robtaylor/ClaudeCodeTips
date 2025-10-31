@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Thursday, July 31st 2025, 12:20:24 am
-date_updated: Thursday, July 31st 2025, 11:37:23 pm
-title: Claude Code Sub Agents
+date_updated: Friday, October 31st 2025, 8:58:21 am
+title: 01-Sub-Agents使用指南
 author: hacket
 categories:
   - AI
@@ -47,6 +47,8 @@ Sub Agent 就像请了一群专家来帮你干活，带来这些好处：
 2. 专业性强：每个 Sub Agent 可以针对特定任务深度定制，干活更靠谱
 3. 可重复使用：做好一个 Sub Agent，可以在不同项目里反复用，还能分享给团队
 4. 权限灵活：你能控制每个 Sub Agent 能用哪些工具，保障安全和专注
+
+使用 subagent 可避免 context 爆炸
 
 ### 开始生成 agents
 
@@ -360,6 +362,8 @@ tools: file_read, file_write, terminal, search_files
 始终包含向上和向下迁移脚本、性能估计和数据验证步骤。
 ```
 
+#### Git agent：处理代码提交和 PR
+
 ### Sub Agents 最佳实践
 
 - **Start with Claude-generated agents**
@@ -406,7 +410,31 @@ Sub agents 每次被调用时都是从一张白纸开始，并且在收集有效
 - <https://www.claudecodeagents.com/>
 - <https://subagents.cc/>
 
-### contains-studio/agents
+### wshobson/agents (截止 2025.8.6 7.2K star)
+
+<https://github.com/wshobson/agents>
+
+包含了 56 个专业的 sub agents，每个 agents 都是各自领域的专家，自动根据上下文本调用或者显示调用。每个 agent 都配置了对应的 model（根据任务复杂性以实现最佳性能和成本效益）。
+
+**sub agents 的 prompt 有点简单**
+
+#### 如何使用？
+
+- 自动调用
+Claude Code 将根据 task context 和 subagents 的描述自动委托给适当的 subagent。
+
+- 显示调用
+在您的请求中提及 subagent 的名称：
+
+```shell
+"Use the code-reviewer to check my recent changes"
+"Have the security-auditor scan for vulnerabilities"
+"Get the performance-engineer to optimize this bottleneck"
+```
+
+#### 使用示例
+
+### contains-studio/agents (截止 2025.8.6 6.5K star)
 
 <https://github.com/contains-studio/agents>
 
@@ -418,7 +446,7 @@ git clone https://github.com/contains-studio/agents.git
 cp -r agents/* ~/.claude/agents/
 ```
 
-### iannuttall/claude-agents 7 个 Agents
+### iannuttall/claude-agents 7 个 Agents (截止 2025.8.6 1.5K star)
 
 <https://github.com/iannuttall/claude-agents> 提供了优化代码、写文档、设计前端界面、规划项目任务、安全审计等 7 个 Agents。
 

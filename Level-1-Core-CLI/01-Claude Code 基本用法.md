@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Wednesday, July 23rd 2025, 12:00:22 am
-date_updated: Tuesday, August 5th 2025, 12:02:52 am
-title: 02-Claude Code基本用法
+date_updated: Friday, October 31st 2025, 8:56:04 am
+title: 01-Claude Code 基本用法
 author: hacket
 categories:
   - AI
@@ -97,7 +97,7 @@ linter-yaml-title-alias: Claude Code 基本用法
 | `defaultMode`                  | 打开 Claude Code 时的默认 [权限模式](https://docs.anthropic.com/zh-CN/docs/claude-code/iam#permission-modes)                                                 | `"allowEdits"`                   |
 | `disableBypassPermissionsMode` | 设置为 `"disable"` 以防止激活 `bypassPermissions` 模式。参见 [管理策略设置](https://docs.anthropic.com/zh-CN/docs/claude-code/iam#enterprise-managed-policy-settings) | `"disable"`                      |
 
-#### 设置的优先级
+#### setting 文件的优先级
 
 设置按优先级顺序应用：
 
@@ -139,136 +139,23 @@ Claude Code 有一个内置的规划模式，当你按两次 `Shift+Tab` 时触�
 
 ```shell
 alias yolo="claude --dangerously-skip-permissions"
+
+# 或者配置一个函数
+function cc() {  
+  # yolo 开启claude code无需权限模式  
+  if [[ "$1" == "yolo" ]]; then  
+    command claude --dangerously-skip-permissions  
+  else   
+    command claude "$@"  
+  fi  
+}
 ```
 
 **副作用：** 有趣的是，现在 Claude 可以做任何它想做的事，我也**更频繁地遇到速率限制配额警告**。
 
 ## MCP 服务器
 
-官方文档：<https://docs.anthropic.com/zh-CN/docs/claude-code/mcp>
-
-### 配置 MCP 服务器
-
-- 添加 MCP stdio 服务器
-
-```shell
-# 基本语法
-claude mcp add <name> <command> [args…]
-
-# 示例：添加本地服务器
-claude mcp add my-server -e API_KEY=123 -- /path/to/server arg1 arg2
-```
-
-- 添加 MCP SSE 服务器
-
-```shell
-# 基本语法
-claude mcp add --transport sse <name> <url>
-
-# 示例：添加 SSE 服务器
-claude mcp add --transport sse sse-server https://example.com/sse-endpoint
-
-# 示例：添加带有自定义标头的 SSE 服务器
-claude mcp add --transport sse api-server https://api.example.com/mcp -e X-API-Key=your-key
-```
-
-- 添加 MCP HTTP 服务器名称
-
-```shell
-# 基本语法
-claude mcp add --transport http <name> <url>
-
-# 示例：添加可流式传输的 HTTP 服务器
-claude mcp add --transport http http-server https://example.com/mcp
-
-# 示例：添加带有身份验证标头的 HTTP 服务器
-claude mcp add --transport http secure-server https://api.example.com/mcp -e Authorization="Bearer your-token"
-```
-
-### 管理您的 MCP 服务器
-
-```shell
-# 列出所有已配置的服务器
-claude mcp list
-
-# 获取特定服务器的详细信息
-claude mcp get my-server
-
-# 删除服务器
-claude mcp remove my-server
-
-# 使用 /mcp 命令来查看 MCP 服务器相关信息：
-```
-
-### 添加 MCP
-
-#### 必要的 MCP
-
-```shell
-# 添加context7
-claude mcp add --transport http context7 https://mcp.context7.com/mcp
-
-# 添加sequential-thinking
-claude mcp add sequential-thinking npx @modelcontextprotocol/server-sequential-thinking
-
-# 添加puppeteer
-npx @modelcontextprotocol/server-puppeteer
-
-claude mcp add puppeteer npx @modelcontextprotocol/server-puppeteer
-
-# 添加magic (https://21st.dev/magic/onboarding?step=create-component)
-claude mcp add magic npx @21st-dev/magic@latest --env API_KEY=你的api key
-
-```
-
-#### Puppeteer：浏览器自动化操作
-
-<https://github.com/modelcontextprotocol/servers-archived/tree/main/src/puppeteer>
-
-**一般添加方法如下：**
-
-```shell
-claude mcp add puppeteer npx -- -y @modelcontextprotocol/server-puppeteer
-```
-
-**通过 JSON 方式添加：**
-
-```shell
-claude mcp add-json -s user puppeteer '{  
-  "command": "npx",  
-  "args": ["-y", "@modelcontextprotocol/server-puppeteer"]  
-}'
-```
-
-> 使用 `-s user` 标志，可以将 MCP 服务器添加到全局配置（可以在 `~/.claude.json` 文件中查看），而不是只针对某个项目，默认不填为 `local`  即当前项目。
-
-**使用：**
-
-> 打开搜索用户页面，按 ID 搜索 6 并返回搜索出来的用户信息
-
-**查看添加**：
-
-```shell
-claude mcp add-json -s user context7 '{ "command": "npx", "args": ["-y", "@upstash/context7-mcp"] }'
-```
-
-#### context7
-
-<https://context7.com/>
-
-<https://github.com/upstash/context7>
-
-它可以为大模型和 AI 代码编辑器提供最新（或者特定版本）的**文档、库、代码、信息**等，避免使用过时的数据，
-
-在 Claude Code 中进行导入：
-
-```shell
-claude mcp add-json -s user context7 '{ "command": "npx", "args": ["-y", "@upstash/context7-mcp"] }'
-```
-
-#### Figma
-
-<https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server>
+见：[[Claude Code MCP]]
 
 ## Claude SDK
 
@@ -539,6 +426,25 @@ Claude 还会发现嵌套在当前工作目录下子树中的 CLAUDE.md。它们
 - **使用结构来组织**：将每个单独的内存格式化为项目符号，并在描述性 markdown 标题下对相关内存进行分组。
 - **定期审查**：随着项目的发展更新内存，以确保 Claude 始终使用最新的信息和上下文。
 
+## Status line
+
+<https://docs.anthropic.com/en/docs/claude-code/statusline>
+
+### 实用的示例
+
+添加到 `~/.claude/settings.json`：
+
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bun x ccusage statusline"
+  }
+}
+```
+
+![20250816010233095](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian20250816010233095.png)
+
 ## 提示词编写技巧（Prompt Engineering）
 
 ### 推荐写法
@@ -573,7 +479,7 @@ Claude 还会发现嵌套在当前工作目录下子树中的 CLAUDE.md。它们
 
 连续按两次 `ESC` 键可以跳到之前的消息：
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250730233504619.png)
+![20250730233504619](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian20250730233504619.png)
 
 上下方向键选择一条消息，然后就会回到对应的提示词命令行窗口，也可以在此基础重新编辑提示词。
 
@@ -593,7 +499,7 @@ Claude Code 提供两个选项来恢复之前的对话：
 
 如果你已经进入了 Claude Code 会话，想恢复到之前的哪个历史会话，可以使用 `/resume` 命令恢复历史会话：
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250730233504626.png)
+![20250730233504626](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian20250730233504626.png)
 
 上下方向键选中一条记录可以恢复会话。
 
@@ -605,19 +511,34 @@ Claude Code 提供两个选项来恢复之前的对话：
 
 直接发送「**回滚**」即可：
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250730233504627.png)
+![20250730233504627](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian20250730233504627.png)
 
 这个类似 Cursor 的 **checkpoint** 检查点功能，如果不想回滚了，再发送一次「**撤销**」即可：
 
 建议再配合 Git 版本控制管理，以防代码丢失。
 
+## 快捷键
+
+`CLI` 也有一套快捷操作。它背后是一套成熟的交互体系，比如 `readline` 库，它提供了强大的行编辑功能。这套机制的核心灵感来自 Emacs 编辑器的操作逻辑，因此也被称为 "`Emacs模式`"。比如：
+
+- Ctrl + W：删除完整单词
+- Ctrl + A/Ctrl + E：快速跳转行首/行尾
+- Ctrl + U/Ctrl + K：删除整行或行尾内容
+- Ctrl + B/Ctrl + F：逐字符移动光标（比方向键更高效）
+
+这些快捷键不仅比鼠标操作更精准，熟悉后而且可以通过配置文件（如 `~/.inputrc`）自定义以适应不同用户的习惯。掌握这些技巧后，你在 Claude Code 上的交互效率一定会明显提升。
+
+不过，不是所有快捷键都能在 Claude Code 中生效，有位国外开发者整理了一些失效的，以及仍然有效的快捷键，有需要的小伙伴可以移步查看：
+
+- [Readline Yank Functionality Broken in Claude CLI · Issue #2088 · anthropics/claude-code](https://github.com/anthropics/claude-code/issues/2088)
+
 ## Claude Code 命令
 
-见：[[03-Claude Code命令]]
+见：[[02-Cladue Code常用命令参考]]
 
 ## Claude Code 技巧
 
-见：[[07-Claude Code使用技巧]]
+见：[[03-Claude Code 使用技巧]]
 
 ## Token 成本管理技巧
 
@@ -631,46 +552,7 @@ Claude Code 提供两个选项来恢复之前的对话：
 
 #### ccusage
 
-官方查看消耗，但过于笼统，不够直观，推荐使用 `ccusage` 工具来查看。
-
-```shell
-npm install -g ccusage
-```
-
-如果要查看自某天开始的消耗：
-
-```shell
-ccusage -s 20250721
-```
-
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250730233504628.png)
-
-如果要实时查看消耗：
-
-```shell
-ccusage blocks --live
-```
-
-Claude Pro / Max 订阅用户可以不用理会消耗，它是按月计费的，不是按使用量计费的。
-
-ccusage 其他常用指令：
-
-```shell
-# 基础用法  
-ccusage          # 显示每日报告（默认）  
-ccusage daily    # 每日 token 使用量及费用  
-ccusage monthly  # 月度汇总报告  
-ccusage session  # 按会话统计用量  
-ccusage blocks   # 5小时计费窗口数据  
-
-# 实时监控  
-ccusage blocks --live  # 实时用量仪表盘  
-
-# 筛选与选项  
-ccusage daily --since 20250525 --until 20250530  # 指定日期范围  
-ccusage daily --json      # 输出 JSON 格式  
-ccusage daily --breakdown # 按模型细分费用
-```
+见：[[01-Claude Code 开源项目汇总]]
 
 ### 减少上下文消耗
 

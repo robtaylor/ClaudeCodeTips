@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Wednesday, July 9th 2025, 11:17:37 pm
-date_updated: Tuesday, August 5th 2025, 12:03:28 am
-title: 01-Claude Code入门
+date_updated: Friday, October 31st 2025, 8:54:30 am
+title: 01-Claude Code安装与配置
 author: hacket
 categories:
   - AI
@@ -43,6 +43,12 @@ linter-yaml-title-alias: Claude Code 入门
 2. 更智能的编码体验：相比 Cursor，Claude Code 在处理复杂任务（如更新 1.8 万行的 React 组件）时表现更稳定，几乎不卡顿，且能更好理解大型代码库的结构和关系
 3. 直接来自 Anthropic：Claude Code 由 Anthropic 开发，模型优化更专注，性价比高。这就像 " 直接从制造商购买 "，比通过第三方（如 Cursor）更划算
 
+## Claude Code 能做什么？
+
+![20250809231926615](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian-ubuntu/20250809231926615.png)
+
+> 图片来自：<https://www.youtube.com/watch?v=gv0WHhKelSE&t=9s>
+
 ## Claude Code 安装
 
 ### Quick Installment
@@ -53,6 +59,12 @@ linter-yaml-title-alias: Claude Code 入门
 ## Method 1 – NPM (global) ⭐️ Official
 npm install -g @anthropic-ai/claude-code
 # Requires Node 18+ on macOS / Linux / WSL  
+
+# 如果安装不了，可使用淘宝npm镜像
+ npm install -g cnpm --registry=https://registry.npmmirror.com
+ # 注册模块镜像
+ npm set registry https://registry.npmmirror.com  
+
 
 ## Method 2 MacOS
 brew install node
@@ -114,8 +126,39 @@ Mac 和 Linux 比较简单
 ```shell
 npm install -g @anthropic-ai/claude-code
 
+npm install -g @anthropic-ai/claude-code --force --no-os-check
+
+# 更新
+claude update
+
 claude
 ```
+
+#### Mac 需要 root 问题
+
+**1、配置 npm 使用用户目录**
+
+```shell
+ # 1. 创建 npm 全局包目录
+  mkdir ~/.npm-global
+
+  # 2. 配置 npm 使用新目录
+  npm config set prefix '~/.npm-global'
+
+  # 3. 将新目录添加到 PATH(根据你的 shell 选择)
+  # 对于 zsh (macOS 默认):
+  echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
+  source ~/.zshrc
+
+  # 对于 bash:
+  echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bash_profile
+  source ~/.bash_profile
+
+  # 4. 现在可以无需 sudo 安装
+  npm i -g @anthropic-ai/claude-code
+```
+
+其他：使用 `nvm` 和 `pnpm`
 
 ### Windows
 
@@ -296,7 +339,7 @@ pause
 	- 使用 `npm install -g @anthropic-ai/claude-code --force --no-os-check` 安装（不要使用 `sudo`）
 - **找不到 Node 错误**: 如果您在运行 `claude` 时看到 `exec: node: not found`，您的 WSL 环境可能正在使用 Windows 安装的 Node.js。您可以通过 `which npm` 和 `which node` 确认这一点，它们应该指向以 `/usr/` 开头的 Linux 路径，而不是 `/mnt/c/`。要解决这个问题，请尝试通过您的 Linux 发行版的包管理器或通过 [`nvm`](https://github.com/nvm-sh/nvm) 安装 Node。
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250719092752430.png)
+![20250719092752430](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian-ubuntu/20250719092752430.png)
 
 这种问题一般是用到了 Windows 的 npm
 
@@ -324,7 +367,7 @@ which npm
 source ~/.bashrc
 ```
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250719093623643.png)
+![20250719093623643](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian-ubuntu/20250719093623643.png)
 
 可以看到，如果可以用了，颜色都变了
 
@@ -339,6 +382,8 @@ source ~/.bashrc
 见官网，一步步来
 
 ### 企业认证
+
+#### 环境变量
 
 ```shell
 # 公司的认证
@@ -361,6 +406,21 @@ $ sudo usermod -d /mnt/c/Users/<you>/newuser newuser
 
 - 或者是设置到 `~/.bashrc`、`~/.zshrc`；最好是这 3 个都设置
 - `source ~/.bashrc`
+
+#### settings.json
+
+或者配置到 settings.json 中去，可以按目录来放置：
+
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://anyrouter.top",
+    "ANTHROPIC_AUTH_TOKEN": "sk-xxx"
+  }
+}
+```
+
+如果 Claude Code 服务不可用时，可以换成 GLM4.5 或 Qwen 大模型来用
 
 ### 镜像站
 
@@ -482,11 +542,11 @@ Claude 无法控制您终端的主题。这由您的终端应用程序处理。�
 
 <https://docs.anthropic.com/zh-CN/docs/claude-code/setup#vim-%E6%A8%A1%E5%BC%8F>
 
-## 其他
+## Claude Code 白嫖
 
-### 白嫖
+白嫖的不是很稳定
 
-#### anyrouter 新用户免费 $100
+### anyrouter 新用户免费 $100
 
 <https://anyrouter.top/register?aff=aXPb>
 
@@ -501,17 +561,64 @@ echo -e '\n export ANTHROPIC_BASE_URL=https://anyrouter.top' >> ~/.zshrc
 
 > **福利提示**：通过 [专属邀请链接注册 AnyRouter](https://anyrouter.top/register?aff=aXPb) 可领 **$100 免费额度**（普通注册仅 $50）。活动限时有效！
 
+### 其他
+
 #### 问问 code
 
 <https://code.wenwen-ai.com/register?aff=htHF>
 
-#### Claude Code Dashboard
+#### agentrouter
+
+<https://agentrouter.org/register?aff=veb6>，注册送 $100 奖励
+
+#### coderouter
+
+<https://api.codemirror.codes/>
+
+免费体验 6000 万 Token
+
+#### aicodemirror
 
 <https://aicodewith.com/?invitation=GJGRYXU>
 
 Claude Code Dashboard 注册可以赠送 1000 积分，够做好几个简单项目了。
 
+#### claudeyy
+
+<https://www.claudeyy.com/>
+
 ## Ref
 
-- Anthropic 技术团队成员 Cal Rueb 在 'Code w/ Claude' 的主题演讲
-<https://x.com/shao__meng/status/1951160113835941971>
+### Claude 官方教程
+
+- Anthropic 技术团队成员 Cal Rueb 在 'Code w/ Claude' 的主题演讲<https://x.com/shao__meng/status/1951160113835941971> <https://www.youtube.com/watch?v=gv0WHhKelSE>
+- Claude Code 最佳实践（Claude Code: Best practices）<https://www.anthropic.com/engineering/claude-code-best-practices>
+中文翻译：<https://docs.ctok.ai/claude-code-best-practices.html>
+
+- Mastering Claude Code in 30 minutes <https://www.youtube.com/watch?v=6eBSHbLKuN0>
+- Claude Code best practices <https://www.youtube.com/watch?v=gv0WHhKelSE&t=9s>
+中文翻译：<https://www.bilibili.com/video/BV1VYh3zEEut?vd_source=eb1d439b380203b6568b0f3a303b7274&spm_id_from=333.788.videopod.sections>
+
+- Prompting for Agents <https://www.youtube.com/watch?v=XSZP9GhhuAc>
+中文翻译：<https://www.bilibili.com/video/BV1j4h3zpEPa?vd_source=eb1d439b380203b6568b0f3a303b7274&spm_id_from=333.788.videopod.sections>
+
+- Building headless automation with Claude Code <https://www.youtube.com/watch?v=dRsjO-88nBs>
+中文翻译：<https://www.bilibili.com/video/BV1o1hgznEpv?vd_source=eb1d439b380203b6568b0f3a303b7274&spm_id_from=333.788.videopod.sections>
+
+### Claude Code 使用技巧
+
+- How I use Claude Code (+ my best tips) <https://www.builder.io/blog/claude-code>
+中文翻译：<https://docs.ctok.ai/claude-code-big-brother.html>
+
+- Best practices to stop Claude Code being "dumb" and ship features with less mistakes (also mostly works for Cursor + other coding tools)
+<https://x.com/iannuttall/status/1951243907628724725?t=yD3KE_skIw9BYnIIWKz3jg&s=09>
+
+- Here are 20+ examples of why Claude Code is the New Secret Weapon for developers and non-technical users. 🧵(save this + share with your team)
+<https://x.com/AtomSilverman/status/1950339679141966317?t=72SJKgBdsrn1hX2C3IgdkA&s=09>
+
+- AI 技术宅
+	- 用上了 Claude Code，才发现 Cursor 和 Gemini Cli 都是弱智。。（保姆级安装和使用教程分享）<https://mp.weixin.qq.com/s?__biz=MzU0OTc0NzAxMg==&mid=2247485429&idx=1&sn=9b3e6c5c2a3f81646de119e6bc90e889&scene=21&poc_token=HP6Bk2ijdQxXhKymwdCnk8UpzZcgp4xgM6Y39VfB>
+	- 再见 Cursor！玩转 Claude Code 的 23 个实用小技巧，效率拉满！！<https://mp.weixin.qq.com/s/gsLAM_eLheCP9hj-dr95fQ>
+	- 榨干 Claude Code 的 16 个实用小技巧（高端玩法，建议收藏！） <https://mp.weixin.qq.com/s?__biz=MzU0OTc0NzAxMg==&mid=2247485487&idx=1&sn=7e2727a0082d88f6705dc4413c84f079&scene=21&poc_token=HOKBk2ijeo0VNYBBWi3exCLMDuDJqzlzv7NiNB9n>
+- [Claude Code - 47 PRO TIPS in 9 minutes](https://www.youtube.com/watch?v=TiNpzxoBPz0)
+中文翻译：<https://www.bilibili.com/video/BV1HEt4zAEqe/?vd_source=eb1d439b380203b6568b0f3a303b7274>

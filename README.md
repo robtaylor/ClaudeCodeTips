@@ -1,14 +1,15 @@
 ---
 banner:
-date_created: Monday, August 4th 2025, 11:46:21 pm
-date_updated: Monday, August 4th 2025, 11:48:09 pm
+date_created: Friday, October 31st 2025, 12:00:00 am
+date_updated: Friday, October 31st 2025, 8:39:23 am
 title: README
 author: hacket
-categories: 
-category:
-tags: []
+categories:
+  - AI
+category: ClaudeCode
+tags: [AI, ClaudeCode, Learning-Path]
 toc: true
-description: 
+description: Claude Code 完整学习路径导航
 dg-publish: true
 dg-enable-search: true
 dg-show-local-graph: true
@@ -17,77 +18,143 @@ dg-show-file-tree: true
 image-auto-upload: true
 feed: show
 format: list
-aliases: [Claude Code 使用指南 🚀]
-linter-yaml-title-alias: Claude Code 使用指南 🚀
+aliases: [Claude Code 学习路径导航]
+linter-yaml-title-alias: Claude Code 学习路径导航
 ---
 
-# Claude Code 使用指南 🚀
+# Claude Code 学习路径导航
 
-一个全面的 Claude Code 学习资源集合，从入门到进阶，帮助开发者快速掌握 AI 辅助编程。
+![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/202510310825827.png)
 
-## 📚 学习路径
+中文版：
 
-| 序号 | 文档名称 | 主要内容 | 难度 | 估计阅读时间 |
-|------|----------|----------|------|--------------|
-| 01 | [Claude Code 入门](./01-Claude%20Code入门.md) | 基础介绍、安装配置、认证设置 | ⭐ | 30 分钟 |
-| 02 | [Claude Code 基本用法](./02-Claude%20Code基本用法.md) | 核心功能、基础操作 | ⭐ | 20 分钟 |
-| 03 | [Claude Code 命令](./03-Claude%20Code命令.md) | Slash 命令详解、自定义命令 | ⭐⭐ | 45 分钟 |
-| 04 | [Claude Code 工作流](./04-Claude%20Code工作流.md) | 开发工作流、最佳实践 | ⭐⭐ | 40 分钟 |
-| 05 | [Claude Code 进阶用法](./05-Claude%20Code进阶用法.md) | 高级功能、进阶技巧 | ⭐⭐⭐ | 35 分钟 |
-| 06 | [Claude Code 最佳实践（官方）](./06-Claude%20Code最佳实践（官方）.md) | 官方推荐的最佳实践 | ⭐⭐⭐ | 60 分钟 |
-| 07 | [Claude Code 使用技巧](./07-Claude%20Code使用技巧.md) | 实用技巧、效率提升 | ⭐⭐ | 50 分钟 |
+![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/202510310825475.png)
 
-## 🔧 专题深入
+## 🎯 学习路径概述
 
-| 文档名称 | 主要内容 | 适用场景 |
-|----------|----------|----------|
-| [Claude Code Hooks](./Claude%20Code%20Hooks.md) | 钩子系统详解 | 自动化工作流、CI/CD |
-| [Claude Code Sub Agents](./Claude%20Code%20Sub%20Agents.md) | 子代理系统 | 复杂项目、团队协作 |
-| [Spec工作流](./Spec工作流.md) | 规范驱动开发 | 企业级开发 |
-| [SuperClaude V3](./SuperClaude%20V3.md) | 增强版工具 | 效率提升 |
-| [Claude Code开源](./Claude%20Code开源.md) | 开源工具生态 | 工具扩展 |
+本知识库按照 Claude Code 官方学习路径组织,从基础到高级,循序渐进地帮助你掌握 Claude Code 的各项功能。
 
-## 🎯 快速开始
+## 📚 五大学习级别
 
-### 新手入门（推荐路径）
+### 🟨 [Level 1: Core CLI - 核心 CLI](Level-1-Core-CLI/README.md)
 
-1. 📖 [Claude Code 入门](./01-Claude%20Code入门.md) - 了解基本概念和安装
-2. 🛠️ [Claude Code 基本用法](./02-Claude%20Code基本用法.md) - 掌握核心功能
-3. ⚡ [Claude Code 命令](./03-Claude%20Code命令.md) - 学习常用命令
+掌握 Claude Code 的核心命令行界面功能。
 
-### 进阶提升
-
-4. 🔄 [Claude Code 工作流](./04-Claude%20Code工作流.md) - 优化开发流程
-5. 🚀 [Claude Code 进阶用法](./05-Claude%20Code进阶用法.md) - 掌握高级特性
-6. 📝 [Claude Code 最佳实践（官方）](./06-Claude%20Code最佳实践（官方）.md) - 学习官方建议
-
-### 专家级应用
-
-7. 💡 [Claude Code 使用技巧](./07-Claude%20Code使用技巧.md) - 实用技巧集合
-8. 🔗 [Claude Code Hooks](./Claude%20Code%20Hooks.md) - 自动化集成
-9. 🤖 [Claude Code Sub Agents](./Claude%20Code%20Sub%20Agents.md) - 高级代理系统
-
-## 📂 附件资源
-
-- [attachments/](./attachments/) 目录包含设计文档、需求说明和任务规划等辅助材料
-
-## 🌟 特色功能
-
-- 📋 **全面覆盖**：从基础到进阶的完整学习路径
-- 🎯 **实用导向**：注重实际应用和最佳实践
-- 🔧 **工具丰富**：涵盖 Hooks、Sub Agents 等高级功能
-- 📖 **中文友好**：全中文文档，易于理解
-
-## 💡 使用建议
-
-- **初学者**：按序号顺序阅读，循序渐进
-- **有经验者**：可直接查看感兴趣的专题
-- **团队使用**：重点关注工作流和最佳实践部分
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request 来完善这个项目！
+**核心笔记:**
+- [安装与配置](Level-1-Core-CLI/01-Claude%20Code安装与配置.md)
+- [基本命令](Level-1-Core-CLI/01-Claude%20Code%20基本用法.md)
+- [常用命令参考](Level-1-Core-CLI/02-Cladue%20Code常用命令参考.md)
+- [工作流实践](Level-1-Core-CLI/01-Claude%20Code工作流实践.md)
 
 ---
 
-**开始你的 Claude Code 之旅吧！** 🎉
+### 🟧 [Level 2: Configuration & Customization - 配置与自定义](Level-2-Configuration/README.md)
+
+深入配置 Claude Code,打造个性化开发环境。
+
+**核心笔记:**
+- [CLAUDE.md 使用指南](Level-2-Configuration/01-CLAUDE.md使用指南.md)
+- [使用其他大模型](Level-2-Configuration/01-Claude%20Code使用其他大模型.md)
+
+---
+
+### 🟥 [Level 3: Extension Systems - 扩展系统](Level-3-Extension-Systems/README.md)
+
+掌握 Claude Code 的高级扩展能力。
+
+**核心笔记:**
+- [Sub Agents 使用指南](Level-3-Extension-Systems/01-Sub-Agents使用指南.md)
+- [MCP 基础与使用](Level-3-Extension-Systems/01-MCP基础与使用.md)
+- [Hooks 完全指南](Level-3-Extension-Systems/01-Hooks完全指南.md)
+- [Claude Agent Skill](Level-3-Extension-Systems/Claude%20Agent%20Skill.md)
+- [Claude Code Skills总结](Level-3-Extension-Systems/Claude%20Code%20Skills总结.md)
+- [进阶用法](Level-3-Extension-Systems/Cladue%20Code进阶用法.md)
+
+---
+
+### 🟪 [Level 4: Programmatic Usage - 编程式使用](Level-4-Programmatic/README.md)
+
+学习以编程方式集成和自动化 Claude Code。
+
+**学习模块:**
+- 4.1 Headless Mode - 无头模式
+- 4.2 Python SDK
+- 4.3 TypeScript SDK
+- 4.4 GitHub Actions
+
+---
+
+### 🟩 [Level 5: Enterprise Deployment - 企业部署](Level-5-Enterprise/README.md)
+
+企业级部署、安全和监控。
+
+**学习模块:**
+- 5.1 IAM - 身份访问管理
+- 5.2 Cloud Providers - 云服务商
+- 5.3 Network Config - 网络配置
+- 5.4 Security - 安全配置
+- 5.5 Monitoring - 监控分析
+
+---
+
+## 📖 其他学习资源
+
+### [Level 6: Best Practices - 最佳实践](Level-6-Best-Practices/README.md)
+
+包含最佳实践、开源项目和工作流实践等扩展材料。
+
+**主要资源:**
+- [官方最佳实践](Level-6-Best-Practices/01-Claude%20Code%20官方最佳实践.md)
+- [个人使用总结](Level-6-Best-Practices/04-Claude%20Code个人使用总结.md)
+- [使用技巧](Level-6-Best-Practices/03-Claude%20Code%20使用技巧.md)
+- [开源项目汇总](Level-6-Best-Practices/01-Claude%20Code%20开源项目汇总.md)
+- [SuperClaude V3](Level-6-Best-Practices/02-SuperClaude-V3.md)
+- [SuperClaude V4](Level-6-Best-Practices/03-SuperClaude-V4.md)
+
+---
+
+## 🗺️ 学习建议
+
+### 初学者路径
+
+1. 从 **Level 1** 开始,完成安装和基本使用
+2. 学习 **Level 2** 的配置,打造舒适的开发环境
+3. 阅读 **Level 6** 中的使用技巧
+
+### 进阶开发者路径
+
+1. 重点学习 **Level 3** 的扩展系统
+2. 掌握 MCP 集成和 Hooks 系统
+3. 参考 **Level 6** 中的开源项目
+
+### 企业用户路径
+
+1. 快速浏览 Level 1-3
+2. 深入学习 **Level 4** 的编程式集成
+3. 重点关注 **Level 5** 的企业部署和安全
+
+---
+
+## 📝 学习进度跟踪
+
+你可以在每个级别的 README 文件中找到学习检查点,帮助你确认是否已掌握该级别的核心知识。
+
+---
+
+## 🔗 相关资源
+
+- 📚 [Claude Code 官方文档](https://docs.anthropic.com/zh-CN/docs/claude-code/overview)
+- 🐙 [Claude Code GitHub](https://github.com/anthropics/claude-code)
+- 🎓 [Anthropic Courses](https://anthropic.skilljar.com/)
+
+---
+
+## 📮 反馈与贡献
+
+如果你在学习过程中发现问题或有改进建议,欢迎提出!
+
+---
+
+**祝你学习愉快! 🚀**
+
+- [x.com/dani\_avila7/status/1983331447571124382?t=Bk-zOjvpdo7sP5hHeblW-A&s=09](https://x.com/dani_avila7/status/1983331447571124382?t=Bk-zOjvpdo7sP5hHeblW-A&s=09)

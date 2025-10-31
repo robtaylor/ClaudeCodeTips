@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Saturday, July 19th 2025, 12:09:46 am
-date_updated: Tuesday, August 5th 2025, 12:02:17 am
-title: 05-Claude Code进阶用法
+date_updated: Friday, October 31st 2025, 8:26:50 am
+title: Cladue Code进阶用法
 author: hacket
 categories:
   - AI
@@ -24,7 +24,7 @@ linter-yaml-title-alias: Claude Code 进阶用法
 
 # Claude Code 进阶用法
 
-## thinking mode
+## Claude Code thinking mode 深度思考模式
 
 ### thinking mode 介绍
 
@@ -94,7 +94,9 @@ Italian (意大利语)
 - BASIC: "penso", "pensare", "pensando", "riflettere"
 ```
 
-## Hooks 钩子
+Claue Code v 2.x 版本，按 Tab 切换，开启 Thinking 模式时输入框会变成蓝色，右下角也有提示
+
+## Claude Code Hooks 钩子
 
 <https://docs.anthropic.com/zh-CN/docs/claude-code/hooks>
 
@@ -107,11 +109,25 @@ Italian (意大利语)
 
 见 [[Claude Code Hooks]]
 
-## Sub Agents
+## Claude Code Sub Agents 子代理
 
 见 [[Claude Code Sub Agents]]
 
-## Claude Code GitHub Action
+## Claude Code output-styles
+
+<https://docs.anthropic.com/en/docs/claude-code/output-styles>
+
+## Claude Code plugins 插件系统
+
+<https://docs.claude.com/en/docs/claude-code/plugins>
+
+## Claude Code Skills
+
+见 : [[Claude Agent Skill]]
+
+## 其他
+
+### Claude Code GitHub Action
 
 Claude Code GitHub Actions 是一套 AI 驱动的 GitHub 自动化工具，旨在将 Claude 的代码生成与协作能力无缝整合进你的开发工作流。
 
@@ -137,6 +153,6 @@ Claude Code GitHub Actions 是一套 AI 驱动的 GitHub 自动化工具，旨�
 @claude fix the TypeError in the user dashboard component
 ```
 
-## Claude Code Proxy 让 Claude 连接其他大模型
+### Claude Code 用其他 LLM
 
-## Claude Code router
+见：[[Claude Code使用其他大模型]]

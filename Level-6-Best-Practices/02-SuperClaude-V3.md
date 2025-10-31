@@ -1,7 +1,7 @@
 ---
 banner: 
 date_created: Friday, July 25th 2025, 12:07:08 am
-date_updated: Friday, July 25th 2025, 11:24:41 pm
+date_updated: Thursday, August 14th 2025, 8:41:03 am
 title: SuperClaude V3
 author: hacket
 categories:
@@ -45,7 +45,7 @@ SuperClaude v 3 就像给 Claude Code 装了个 " 强化插件 "，主要提供�
 - 还有一些辅助命令，比如 /sc:document（写文档）、/sc:git（Git 操作）等  
 这些命令让 Claude 能更精准地处理开发任务，而不是泛泛而谈。
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250723004518638.png)
+![20250723004518638](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250814084050080.png)
 
 二、智能角色（Personas）  
 SuperClaude 内置了多个 "AI 专家 "，会根据你的任务自动切换合适的角色：  
@@ -70,7 +70,7 @@ SuperClaude 内置了多个 "AI 专家 "，会根据你的任务自动切换合�
 - 内置任务管理功能，帮你跟踪项目进度  
 - 优化了 Claude 的 token 使用，能支持更长的对话，减少 " 内存 " 不足的问题
 
-![image.png](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250723003752227.png)
+![20250723003752227](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250814084050092.png)
 
 ## 安装
 
@@ -339,6 +339,18 @@ MCP (Master Control Program) 是 SuperClaude 的大脑，提供了一系列强�
 - /loop
 
 ### 示例
+
+#### 工作流
+
+利用 SuperClaudeV3 的 `/sc:workflow`，基于已有的 [proxy.sh](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250810132735120.sh)，目前只支持 Mac，让他帮我实现以支持 Windows/Mac/Linux 等多个平台
+
+```shell
+/sc:workflow 我现在想要改造proxy.sh，以支持windows、mac和linux多种操作系统；且对于多个adb连接设备要有好的支持，目前是不支持的，帮我解决这个问题吧
+```
+
+生成的计划：
+
+[IMPLEMENTATION_PLAN.md](https://raw.githubusercontent.com/hacket/ObsidianOSS/master/obsidian/20250810132601739.md)
 
 #### 复杂工作流示例: 完整开发流程
 

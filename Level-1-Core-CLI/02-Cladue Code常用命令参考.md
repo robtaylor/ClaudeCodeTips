@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Tuesday, July 15th 2025, 12:20:55 am
-date_updated: Tuesday, July 22nd 2025, 1:06:15 am
-title: 03-Claude Code命令
+date_updated: Friday, October 31st 2025, 9:00:51 am
+title: 02-Cladue Code常用命令参考
 author: hacket
 categories:
   - AI
@@ -449,7 +449,7 @@ cat > .claude/commands/fullstack/feature.md <<EOF
 
 - md 内容
 
-```
+```markdown
 ---  
 description: 全栈功能开发流程  
 allowed-tools: Read, Edit, MultiEdit, Bash(*)  
@@ -503,7 +503,7 @@ cat > ~/.claude/commands/security/audit.md <<EOF
 
 - md
 
-```
+```markdown
 ---  
 description: 全面安全审查工具  
 allowed-tools: Bash(*), Read, Grep  
@@ -553,7 +553,7 @@ cat > .claude/commands/review/comprehensive.md <<EOF
 
 - md
 
-```
+```markdown
 ---  
 description: 全面代码评审流程  
 allowed-tools: Bash(git*), Read, Grep, Edit  
@@ -649,7 +649,7 @@ cat > ~/.claude/commands/optimization/context.md << 'EOF'
 
 - md
 
-```
+```markdown
 ---  
 description: 智能上下文管理和优化  
 ---  
@@ -714,7 +714,7 @@ cat > .claude/commands/session/save-state.md <<EOF
 
 - md
 
-```
+```markdown
 ---
 description: 保存和恢复会话状态
 allowed-tools: Write, Read, Edit
@@ -795,3 +795,19 @@ $ARGUMENTS
 4. 更新会话状态
 EOF
 ```
+
+## 开源
+
+### CCPlugins
+
+<https://github.com/brennercruvinel/CCPlugins>
+
+Professional commands for Claude Code CLI
+
+很多实用的自定义 command
+
+### Claude Code Cheat Sheet (Beta)
+
+<https://github.com/Njengah/claude-code-cheat-sheet>
+
+将 Claude Code 的所有功能按难度分为几个等级；每个命令都有详细的示例和使用场景。

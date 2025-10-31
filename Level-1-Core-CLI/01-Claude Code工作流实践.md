@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Sunday, July 20th 2025, 12:16:13 am
-date_updated: Wednesday, July 30th 2025, 1:08:40 am
-title: 04-Claude Code工作流
+date_updated: Friday, October 31st 2025, 8:27:35 am
+title: 01-工作流实践
 author: hacket
 categories:
   - AI
@@ -532,6 +532,16 @@ git worktree remove ../project-feature-a
 
 ### kiro 开发工作流 Spec
 
-见 [[Spec工作流]]
+见 [[Kiro Spec工作流]]
 
-## 开源
+### BMAD-Method
+
+见 [[BMAD Method]]
+
+### GitHub Spec 工作流
+
+见 [[Github Spec Kit]]
+
+### OpenSpec
+
+见 [[OpenSpec]]
