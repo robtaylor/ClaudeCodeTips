@@ -169,10 +169,24 @@
 
 ### 📖 Skills 使用文档
 
-详细的 Skill 使用指南请查看：
+详细的 Skill 使用指南请查看 [**Skills 文档中心**](skills/docs/README.md)
 
-- 🔍 [**Source Tracing - 信息溯源技能**](skills/docs/source-tracing.md) ⭐ **重点推荐**
+**重点推荐文档**：
+
+- 🔍 [**Source Tracing - 信息溯源**](skills/docs/source-tracing.md) ⭐
   > 追溯信息源，一层一层往下挖，去读、去看最原始的材料，就已经领先了至少 99% 的人。
+
+- 📄 [**DOCX - Word 文档处理**](skills/docs/docx.md)
+  > 专业文档创建、编辑和修订跟踪
+
+- 📕 [**PDF - PDF 文档处理**](skills/docs/pdf.md)
+  > 完整的 PDF 工具包，提取、创建、合并、表单
+
+- 📗 [**XLSX - Excel 电子表格**](skills/docs/xlsx.md)
+  > 数据分析和财务建模，遵循行业标准
+
+- 📙 [**PPTX - PowerPoint 演示文稿**](skills/docs/pptx.md)
+  > 演示文稿创建和内容提取
 
 ---
 
