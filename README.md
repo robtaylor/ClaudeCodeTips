@@ -157,12 +157,22 @@
 - **webapp-testing** - 本地 Web 应用测试工具包
 - **template-skill** - 技能模板
 
+#### 🔍 信息验证工具
+- **source-tracing** - 信息溯源技能，从高熵的二手内容中回溯到低熵、权威、原始的信息源
+
 #### 📊 企业工具
 - **internal-comms** - 内部沟通文档模板
 - **slack-gif-creator** - Slack 动画 GIF 创建工具
 - **video-downloader** - 视频下载工具
 
 使用方法：输入 `/skill` 命令或直接调用相关技能名称即可使用。
+
+### 📖 Skills 使用文档
+
+详细的 Skill 使用指南请查看：
+
+- 🔍 [**Source Tracing - 信息溯源技能**](skills/docs/source-tracing.md) ⭐ **重点推荐**
+  > 追溯信息源，一层一层往下挖，去读、去看最原始的材料，就已经领先了至少 99% 的人。
 
 ---
 
