@@ -35,6 +35,7 @@ linter-yaml-title-alias: "Level 3: Extension Systems - 扩展系统"
 - [[01-Hooks完全指南]] - Hook Events 和自动化工作流配置
 - [[Claude Agent Skill]] - Skills 系统使用和开发
 - [[Claude Code Skills总结]] - Skills 实践经验总结
+- [[Deep Reading Analyst Skill使用指南]] - 深度阅读分析框架（新增）
 
 ## 🎯 学习检查点
 

@@ -55,6 +55,15 @@ linter-yaml-title-alias: Claude Code Skills
 - 自订你的工作流程
 - 让 Claude 配合你的习惯工作
 
+### 知识管理与学习
+
+- **深度阅读分析** ⭐新增
+	- 系统化分析文章、论文和长篇内容
+	- 使用批判性思维、第一性原理、系统思维等多种框架
+	- 四级分析深度：Quick (15分钟) / Standard (30分钟) / Deep (60分钟) / Research (120分钟+)
+	- 示例：「深度分析这篇技术博客：https://example.com/article」
+	- 详见：[[Deep Reading Analyst Skill使用指南]]
+
 ## Security & Best Practices
 
 [GitHub - travisvn/awesome-claude-skills: A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows — particularly Claude Code](https://github.com/travisvn/awesome-claude-skills?tab=readme-ov-file#-security--best-practices)
