@@ -1,7 +1,7 @@
 ---
 banner:
 date_created: Monday, September 8th 2025, 12:14:42 am
-date_updated: Friday, October 31st 2025, 8:36:22 am
+date_updated: Tuesday, November 18th 2025, 8:36:16 am
 title: 01-CLAUDE.md使用指南
 author: hacket
 categories: 
@@ -69,17 +69,20 @@ CLAUDE.md 文档一般可以包含编码指南和标准、项目特定上下文�
 
 ### 调优 claude.md
 
-**1、基本调优：**
+#### **1、基本调优：**
+
 - 调优 `CLAUDE.md`，以达到最佳状态
 - 定期优化和精简 claude. md 文件，保持其具体和高效性
 - 在仓库根目录（以及子目录/用户目录）维护精炼的 CLAUDE. md；
 - 用 `#` 快速沉淀命令、规范与重要规则。
 
-**2、使用 Anthropic 提示词优化工具优化 claude. md**
+#### **2、使用 Anthropic 提示词优化工具优化 claude. md**
+
 - [Use our prompt improver to optimize your prompts - Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-improver)
 ![](https://mintlify.s3.us-west-1.amazonaws.com/anthropic/images/prompt_improver_modal.png)
 
-**3、配合 Deep Graph MCP**
+#### **3、配合 Deep Graph MCP**
+
 让 Claude Code 读取项目的 README. md，结合 Deep Graph MCP 的强大功能，再次更新 CLAUDE. md。用 Deep Graph MCP，让 Claude Code 能更深入地分析代码库，比如进行语义搜索、节点搜索，全面提升上下文理解能力。
 
 ```markdown
@@ -96,6 +99,19 @@ CLAUDE.md 文档一般可以包含编码指南和标准、项目特定上下文�
 ```
 
 为什么：这能确保 Claude Code 对项目的理解达到最佳状态，即使你提出模糊或复杂的问题，它也能准确应对。
+
+#### 不要用一个巨大的文件，使用文档引用
+
+```markdown
+### 🗺️ 关键文档引用
+- **Docker 架构**: `/docs/DOCKER_ARCHITECTURE.md` 🐳
+- **数据库架构**: `/docs/DATABASE_ARCHITECTURE.md`
+- **密码真相**: `/docs/PASSWORD_TRUTH.md` 🚨 先读这个！
+- **JWT 认证**: `/docs/JWT_AUTHENTICATION_ARCHITECTURE.md` 🔐
+- **安全检查清单**: `/docs/SECURITY_CHECKLIST.md` 🚨
+- **功能请求**: `/docs/enhancements/README.md`
+- **健康监测 V2**: `/docs/enhancements/HEALTH_MONITORING_V2.md` 🆕
+```
 
 ### 用好 claude.md: 写出 " 零 Bug" 代码的关键
 
@@ -152,7 +168,7 @@ Claude Code 支持自定义规则文件 `claude.md`，这是许多用户忽视�
 
 跟 MCP 配置数量一样，CLAUDE.md 文档也并不是需要面面俱到，越长越好。太长的系统提示词会占据较多的上下文空间，一定程度上也会稀释真正的项目信息。
 
-## 好用的
+## 好用的 rules
 
 ### 任何项目都务必遵守的规则
 

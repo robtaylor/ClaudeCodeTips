@@ -1,8 +1,8 @@
 ---
 banner: 
 date_created: Monday, August 11th 2025, 1:43:16 am
-date_updated: Friday, October 31st 2025, 12:52:52 am
-title: 01-使用其他大模型
+date_updated: Wednesday, November 19th 2025, 12:16:12 am
+title: 01-Claude Code使用其他大模型
 author: hacket
 categories:
   - AI
@@ -25,6 +25,8 @@ linter-yaml-title-alias: Claude Code 使用其他大模型
 # Claude Code 使用其他大模型
 
 ## qwen 3
+
+### Claude Code
 
 在 Claude Code 中使用百炼提供的 `Qwen3-Coder-Plus` 模型，只需配置以下两个环境变量：
 
@@ -49,13 +51,17 @@ export ANTHROPIC_SMALL_FAST_MODEL="qwen-flash"
 
 选海外版本
 
-### 申请 API Key
+### Claude Code 中使用
+
+<https://docs.bigmodel.cn/cn/coding-plan/tool/claude>
+
+#### 申请 API Key
 
 打开智谱大模型开放平台 BigMoModel： <https://bigmodel.cn/usercenter/proj-mgmt/apikeys>
 
 在「个人中心」-「项目管理」-「API keys」下，点「添加新的 API Key」，然后复制 API key。
 
-### 配置环境变量
+#### 配置环境变量
 
 - Windows 配置在环境变量中
 - Mac/Linux，配置的 `~/.zshrc` 或 `~/.bashrc`
@@ -65,7 +71,7 @@ export ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
 export ANTHROPIC_AUTH_TOKEN="刚才复制的 API Key"
 ```
 
-### 验证
+#### 验证
 
 输入 claude 命令，看到 API Base URL 如下图，说明可以开始用 GLM-4.5 干活了。
 
@@ -75,6 +81,17 @@ export ANTHROPIC_AUTH_TOKEN="刚才复制的 API Key"
 <https://bigmodel.cn/finance/expensebill/list>
 
 **注意：** 看模型是 haiku，这不影响
+Ref: [Tutorial on how to configure GLM 4.6 in Claude Code](https://x.com/donvito/status/1979597244895826086?t=pHzjZdP5QYQwqPTLTQswng&s=09)
+
+### OpenAI 兼容格式
+
+- 选择 **OpenAI 协议**。
+- 配置 **OpenAI API Key**（从 [智谱开放平台](https://bigmodel.cn/usercenter/proj-mgmt/apikeys) 获取）。
+- 在 **Override OpenAI Base URL** 中，将默认 URL 替换为 **GLM-4.6** 的接口地址：`https://open.bigmodel.cn/api/coding/paas/v4`。
+- 输入您希望使用的模型，如 `GLM-4.6`, `GLM-4.5` 或 `GLM-4.5-air`。
+- 注意: 在 Cursor 中，需要输入模型的大写名称不能小写名称，如 `GLM-4.6`。
+
+<https://docs.bigmodel.cn/cn/coding-plan/tool/cursor>
 
 ## KAT-Coder
 

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/doctor)",
+      "Bash(claude doctor)",
+      "Bash(dir)",
+      "Bash(where bun)",
+      "Bash(bun x:*)",
+      "Bash(for:*)",
+      "Bash(do echo '=== $i ===')",
+      "Bash(__NEW_LINE__ ls -1 /Users/10069683/Documents/ObsidianVault/$i-*)",
+      "Bash(__NEW_LINE__ done)",
+      "Bash(do if [ -d \"$dir\" ])",
+      "Bash(cat:*)",
+      "Bash(tree:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
