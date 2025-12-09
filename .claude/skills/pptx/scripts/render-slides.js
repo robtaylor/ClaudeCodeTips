@@ -31,7 +31,8 @@ async function renderSlides(slidesDir, outputDir, options = {}) {
         width = 960,
         height = 540,
         scale = 2,
-        pattern = '*.html'
+        pattern = '*.html',
+        headless = true
     } = options;
 
     // Create output directory if it doesn't exist
@@ -56,7 +57,13 @@ async function renderSlides(slidesDir, outputDir, options = {}) {
 
     console.log(`Rendering ${files.length} slides at ${width * scale}x${height * scale} (${scale}x scale)...`);
 
-    const browser = await puppeteer.launch();
+    // Use --no-sandbox in CI environments (GitHub Actions, etc.)
+    const browserArgs = process.env.CI ? ['--no-sandbox', '--disable-setuid-sandbox'] : [];
+
+    const browser = await puppeteer.launch({
+        headless,
+        args: browserArgs
+    });
     const page = await browser.newPage();
 
     await page.setViewport({
@@ -113,7 +120,13 @@ async function renderHtml(htmlContent, outputPath, options = {}) {
         isFile = false
     } = options;
 
-    const browser = await puppeteer.launch();
+    // Use --no-sandbox in CI environments (GitHub Actions, etc.)
+    const browserArgs = process.env.CI ? ['--no-sandbox', '--disable-setuid-sandbox'] : [];
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: browserArgs
+    });
     const page = await browser.newPage();
 
     await page.setViewport({
