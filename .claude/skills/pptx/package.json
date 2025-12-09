@@ -4,7 +4,8 @@
   "description": "PowerPoint creation skill for Claude Code using html2pptx and Puppeteer rendering",
   "scripts": {
     "render": "node scripts/render-slides.js",
-    "create": "node scripts/create-from-images.js"
+    "create": "node scripts/create-from-images.js",
+    "test": "node test/test-workflow.js"
   },
   "dependencies": {
     "pptxgenjs": "^3.12.0",
